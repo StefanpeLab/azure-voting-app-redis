@@ -27,6 +27,7 @@ jobs:
         id: build-push-acr
         uses: azure/acr-build@v1
         with:
+          service_principal: ${{ secrets.AZURE_CLIENT_ID }}      
           registry: ${{ secrets.registry }}
           repository: ${{ secrets.repository }}
           image:  azure-vote-front
